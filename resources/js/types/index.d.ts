@@ -6,9 +6,23 @@ export interface User {
 }
 
 export type PageProps<
-    T extends Record<string, unknown> = Record<string, unknown>,
+    T extends Record<string, unknown> = Record<string, unknown>
 > = T & {
     auth: {
         user: User;
     };
 };
+
+export interface IApplicant {
+    id: bigint;
+    regNo: bigint;
+    applicantName: string;
+    fatherName: string;
+    motherName: string;
+    dob: Date;
+    oldDob: string;
+    mailingAddress: string;
+    presentAddress: string;
+    permanentAddress: string;
+    status: string;
+}

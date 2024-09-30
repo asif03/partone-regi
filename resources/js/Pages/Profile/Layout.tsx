@@ -30,13 +30,7 @@ export default function ProfileLayout({
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
     return (
-        <Authenticated
-            header={
-                <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                    Profile
-                </h2>
-            }
-        >
+        <Authenticated>
             <div className="lg:py-0 py-4 px-6 pb-6">
                 <div className="space-y-0.5">
                     <h2 className="text-2xl font-bold tracking-tight">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FcpsOnePassApplicantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    /** FCPS PART ONE Passed Applicant */
+    Route::get('/part-one-passed-applicants', [FcpsOnePassApplicantController::class, 'index'])->name('applicants.index');
+    Route::get('/part-one-passed-applicants/{id}', [FcpsOnePassApplicantController::class, 'edit'])->name('applicants.edit');
+
+    /*User Profile*/
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
