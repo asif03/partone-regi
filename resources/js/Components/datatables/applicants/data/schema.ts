@@ -8,7 +8,7 @@ export const applicantSchema = z.object({
     applicantName: z.string(),
     fatherName: z.string(),
     motherName: z.string(),
-    dob: z.string().date(),
+    dob: z.date(),
     oldDob: z.string(),
     mailingAddress: z.string(),
     presentAddress: z.string(),
